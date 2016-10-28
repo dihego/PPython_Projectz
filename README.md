@@ -18,7 +18,7 @@ Demo and Output
 </h1>
 
 
-'''
+'''xml
 Copy and Paste name of hosts you would like to query: 
 CTR^D to quit and query hosts
 
@@ -41,8 +41,3 @@ Next******
 
 Done!
 '''
-
-
-```xml
-adsf
-```
