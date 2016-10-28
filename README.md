@@ -14,7 +14,7 @@ Plug N Play = Copy and paste all of the hosts "Line per line". Once done hit ent
 
 
 <h1>
-Demo and Out 
+Demo and Output
 </h1>
 
 Copy and Paste name of hosts you would like to query: 
