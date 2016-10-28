@@ -24,10 +24,10 @@ CTR^D to quit and query hosts
 
 google.com
 
-*********
+'''*********'''
 Commands - ex: nslookup,host, dig, traceroute :  
 ping -c4
-*********
+"*********"
 Number of Hosts:  1
 PING google.com (172.217.4.174) 56(84) bytes of data.
 
