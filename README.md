@@ -18,7 +18,8 @@ Demo and Output
 </h1>
 
 Copy and Paste name of hosts you would like to query: 
-CTR^D to quit and query hosts ********** 
+CTR^D to quit and query hosts
+
 google.com
 
 *********
