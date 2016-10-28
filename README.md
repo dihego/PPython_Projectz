@@ -1,4 +1,4 @@
-# PPython_Projectz
+# Nslookup,ping, traceroute and whois  python 
 '''
 nslookup_ping_host_whois 
 '''
