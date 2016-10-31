@@ -10,6 +10,6 @@ scripts
 
 
 * MATH - There are four scripts; Addition, subraction, division, multiplication.  Enter the number of operations you want your kid to do for their daily  operations. 
-**** FYI - you can change the DIFICULTY by lines 27 and 28 - this increments the number of digits in the operations. You may contact me I would be more than happy to assist!
+**** FYI - you can change the DIFFICULTY by lines 27 and 28 - this increments the number of digits in the operations. You may contact me I would be more than happy to assist!
 
 
