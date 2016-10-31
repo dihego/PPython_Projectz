@@ -10,4 +10,7 @@ We will be adding more addition actions to this script
 * spelling.py - This is for MAC users ONLY!!! - I have created this script to help my son in school. As he gets about 30 words for the week to learn and test out on Friday. The script will say the word and the user/son is to type the correct word if wrong after 5 trys then it will display the word.    FYI - MAC have the ability to read out what you type!!
 
 
+* MATH - There are four scripts; Addition, subraction, division, multiplication.  Enter the number of operations you want your kid to do for their daily  operations. 
+**** FYI - you can change the DIFICULTY by lines 27 and 28 - this increments the number of digits in the operations. You may contact me I would be more than happy to assist!
+
 
