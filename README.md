@@ -12,4 +12,5 @@ scripts
 * MATH - There are four scripts; Addition, subraction, division, multiplication.  Enter the number of operations you want your kid to do for their daily  operations. 
 **** FYI - you can change the DIFFICULTY by editing lines 27 and 28 - this increments the number of digits in the operations. You may contact me I would be more than happy to assist!
 
+* sshbruteforce.py - SSH brute force - Need two files; users.txt & passwords.txt. Also be sure to update target IP 
 
