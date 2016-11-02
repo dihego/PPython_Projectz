@@ -14,3 +14,4 @@ scripts
 
 * sshbruteforce.py - SSH brute force - Need two files; users.txt & passwords.txt. Also be sure to update target IP 
 
+* scpp.py - CREATE a cron and transfer files - scp files between hosts. 
