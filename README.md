@@ -15,3 +15,12 @@ scripts
 * sshbruteforce.py - SSH brute force - Need two files; users.txt & passwords.txt. Also be sure to update target IP 
 
 * scpp.py - CREATE a cron and transfer files - scp files between hosts. 
+
+* keepass - 
+      FIRST creating your files:
+      * Create a file name pass
+      * create a file name - this as the name of your script. Example: keepass
+      THEN
+      run the script as bash : 
+      * bash keepass
+      There are only two actions (v) as view and (a) as add. Ensure that your response is in lowercase
