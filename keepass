@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+echo "Are you viewing or adding? "
+read RES
+
+if [ $RES = 'v' ];then
+	openssl des3 -d -in pass
+else
+	if [ $RES = 'a' ];then
+		openssl des3 -d -in pass -out pass2
+		rm pass
+		vi pass2
+		openssl des3 -in pass2 -out pass
+	fi
+fi
