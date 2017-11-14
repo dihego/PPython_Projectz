@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-echo "Are you viewing or adding? "
+echo "(v) OR (a) : "
 read RES
 
 if [ $RES = 'v' ];then
