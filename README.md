@@ -28,4 +28,5 @@ scripts
       
       
 * ASA  
-      Run commands via http against you ASA - instead of using i as in include USE grep 
+      Run commands via https against ASA - 
+      Instead of using i as in include USE grep 
