@@ -42,7 +42,7 @@ while match:
         else:
             cmdreplace = cmd.replace(' ','+')
 
-            cmd1 = "curl -k -u dihegov:" + codigo + " -A ASDM https://192.168.101.14/admin/exec/"
+            cmd1 = "curl -k -u username:" + codigo + " -A ASDM https://192.168.101.14/admin/exec/"
             cmd11 = cmd1 + cmdreplace
             print
             print ("#"*40)
