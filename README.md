@@ -25,3 +25,7 @@ scripts
       * bash keepass
       There are only two actions (v) as view and (a) as add. Ensure that your response is in lowercase. Since this is YOUR FIRST time           adding to the file then select (a). Remember that you are using vi to edit the file. So press i "To edit the file".
       Add your password line per line then... press: esc then :wq  - that is to write and quite the file. The script will ask you to enter       a password to encrypt the file twice!!! REMEMBER it otherwise you will lose your info
+      
+      
+* ASA  
+      Run commands via http against you ASA - instead of using i as in include USE grep 
