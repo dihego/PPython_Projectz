@@ -1,0 +1,55 @@
+import sys
+import os
+import time
+import getpass
+
+match = True
+codigo = getpass.getpass("Enter your PWD: ")
+while match:
+    cmd = raw_input("Enter your command: ")
+    if cmd == "q":
+        print "SAYONARA!!!!"
+        time.sleep(1)
+
+        break
+    else: 
+        #os.system("clear")
+        print 
+        if "|" in cmd:
+            piperemoval = cmd.split("|",1)
+            firsthalf = piperemoval[0]
+            firstfreplace = firsthalf.replace(' ','+')
+
+            secondhalf = piperemoval[1]
+            #secondhalfsplit = secondhalf.split()
+            #secondhalfsplitinclud = secondhalfsplit[0]
+            #secondhalfsplitstring = secondhalfsplit[1]
+            #secondreplace = secondhalfsplitinclud.replace('i','grep')
+
+            cmdreplace = cmd.replace(' ','+')
+
+            cmd1111 = "curl -s -k -u username:" + codigo + " -A ASDM https://192.168.101.14/admin/exec/"
+            cmd11111 = cmd1111 + firstfreplace + " | " + secondhalf
+            print cmd
+            print ("#"*40)
+            os.system(cmd11111)
+            print
+            print
+            print
+            print
+
+
+        else:
+            cmdreplace = cmd.replace(' ','+')
+
+            cmd1 = "curl -k -u dihegov:" + codigo + " -A ASDM https://192.168.101.14/admin/exec/"
+            cmd11 = cmd1 + cmdreplace
+            print
+            print ("#"*40)
+            os.system(cmd11)
+        print
+        print
+        print
+        print
+        #print cmd
+        print ("#"*40)
