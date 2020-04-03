@@ -2,54 +2,463 @@ import sys
 import os
 import time
 import getpass
+import re
 
 match = True
+notahostname = True
+usernameee = raw_input("Username: ")
 codigo = getpass.getpass("Enter your PWD: ")
+print
+os.system('clear')
+allfirewall = ['exit...','dc7vrffw','dn3vrffw1','dc7ravpnfw','dc7vendorfw1','hremotefw','dc7mgmtfw','dn3ravpnfw','dn3vendorfw','dn3mgmtfw']
 while match:
-    cmd = raw_input("Enter your command: ")
-    if cmd == "q":
-        print "SAYONARA!!!!"
-        time.sleep(1)
-
-        break
-    else: 
-        #os.system("clear")
-        print 
-        if "|" in cmd:
-            piperemoval = cmd.split("|",1)
-            firsthalf = piperemoval[0]
-            firstfreplace = firsthalf.replace(' ','+')
-
-            secondhalf = piperemoval[1]
-            #secondhalfsplit = secondhalf.split()
-            #secondhalfsplitinclud = secondhalfsplit[0]
-            #secondhalfsplitstring = secondhalfsplit[1]
-            #secondreplace = secondhalfsplitinclud.replace('i','grep')
-
-            cmdreplace = cmd.replace(' ','+')
-
-            cmd1111 = "curl -s -k -u username:" + codigo + " -A ASDM https://192.168.101.14/admin/exec/"
-            cmd11111 = cmd1111 + firstfreplace + " | " + secondhalf
-            print cmd
-            print ("#"*40)
-            os.system(cmd11111)
-            print
-            print
-            print
-            print
-
-
-        else:
-            cmdreplace = cmd.replace(' ','+')
-
-            cmd1 = "curl -k -u username:" + codigo + " -A ASDM https://192.168.101.14/admin/exec/"
-            cmd11 = cmd1 + cmdreplace
-            print
-            print ("#"*40)
-            os.system(cmd11)
-        print
-        print
-        print
-        print
-        #print cmd
         print ("#"*40)
+        for index, value in enumerate(allfirewall):
+            print index, value
+    
+        print
+        hostname = raw_input("Select the Hostname you would like to query: ")
+
+
+        if re.search(r'(\w+[a-z]|\w+[A-Z])',hostname):
+            print "Is not a number!"
+        elif len(hostname.strip()) == 0 :
+            print "No input"
+
+        elif hostname == "0":
+            print "Exiting..."
+            match = False
+        elif hostname == "1":
+            hostname1 =  str(allfirewall[1])
+
+            command1 = raw_input("Enter your command: ")
+            if command1 == 'q' or hostname == 'no':
+                print "SAYONARA!!!!"
+                time.sleep(1)
+                match = False
+             
+            elif "|" in command1:
+                piperemoval = command1.split("|",1)
+                firsthalf = piperemoval[0]
+                firstfreplace = firsthalf.replace(' ','+')
+
+                secondhalf = piperemoval[1]
+                #secondhalfsplit = secondhalf.split()
+                #secondhalfsplitinclud = secondhalfsplit[0]
+                #secondhalfsplitstring = secondhalfsplit[1] 
+                #secondreplace = secondhalfsplitinclud.replace('i','grep')
+
+                cmdreplace = command1.replace(' ','+')
+
+                cmd1111 = "curl -s -k -u " + usernameee +":" + codigo + " -A ASDM https://" + hostname1 + "/admin/exec/"
+                cmd11111 = cmd1111 + firstfreplace + " | " + secondhalf
+                print command1
+                print ("#"*40)
+                os.system(cmd11111)
+                print
+                print
+                print
+                print
+
+            else:
+                cmdreplace = command1.replace(' ','+')
+
+                cmd1 = "curl -k -u " + usernameee +":" + codigo + " -A ASDM https://" + hostname1 + "/admin/exec/"
+                cmd11 = cmd1 + cmdreplace
+                print
+                print ("#"*40)
+                os.system(cmd11)
+                print
+                print
+                print
+                print
+                print command1
+                print ("#"*40)   
+
+    elif hostname == "2":
+            print allfirewall[2]
+            hostname2 =  str(allfirewall[2])
+
+            command2 = raw_input("Enter your command: ")
+            if command2 == 'q' or hostname == 'no':
+                print "SAYONARA!!!!"
+                time.sleep(1)
+                match = False
+             
+            elif "|" in command2:
+                piperemoval = command2.split("|",1)
+                firsthalf = piperemoval[0]
+                firstfreplace = firsthalf.replace(' ','+')
+
+                secondhalf = piperemoval[1]
+                #secondhalfsplit = secondhalf.split()
+                #secondhalfsplitinclud = secondhalfsplit[0]
+                #secondhalfsplitstring = secondhalfsplit[1] 
+                #secondreplace = secondhalfsplitinclud.replace('i','grep')
+
+                cmdreplace = command2.replace(' ','+')
+
+                cmd1111 = "curl -s -k -u " + usernameee +":" + codigo + " -A ASDM https://" + hostname2 + "/admin/exec/"
+                cmd11111 = cmd1111 + firstfreplace + " | " + secondhalf
+                print command2
+                print ("#"*40)
+                os.system(cmd11111)
+                print
+                print
+                print
+                print
+
+            else:
+                cmdreplace = command2.replace(' ','+')
+
+                cmd1 = "curl -k -u " + usernameee +":" + codigo + " -A ASDM https://" + hostname2 + "/admin/exec/"
+                cmd11 = cmd1 + cmdreplace
+                print
+                print ("#"*40)
+                os.system(cmd11)
+                print
+                print
+                print
+                print
+                print command2
+                print ("#"*40)   
+
+        elif hostname == "3":
+            print allfirewall[3]
+            hostname3 =  str(allfirewall[3])
+            command3 = raw_input("Enter your command: ")
+            if command3 == 'q' or hostname == 'no':
+                print "SAYONARA!!!!"
+                time.sleep(1)
+                match = False
+             
+            elif "|" in command3:
+                piperemoval = command3.split("|",1)
+                firsthalf = piperemoval[0]
+                firstfreplace = firsthalf.replace(' ','+')
+
+                secondhalf = piperemoval[1]
+                #secondhalfsplit = secondhalf.split()
+                #secondhalfsplitinclud = secondhalfsplit[0]
+                #secondhalfsplitstring = secondhalfsplit[1] 
+                #secondreplace = secondhalfsplitinclud.replace('i','grep')
+
+                cmdreplace = command3.replace(' ','+')
+
+                cmd1111 = "curl -s -k -u " + usernameee +":" + codigo + " -A ASDM https://" + hostname3 + "/admin/exec/"
+                cmd11111 = cmd1111 + firstfreplace + " | " + secondhalf
+                print command3
+                print ("#"*40)
+                os.system(cmd11111)
+                print
+                print
+                print
+                print
+
+            else:
+                cmdreplace = command3.replace(' ','+')
+
+                cmd1 = "curl -k -u " + usernameee +":" + codigo + " -A ASDM https://" + hostname3 + "/admin/exec/"
+                cmd11 = cmd1 + cmdreplace
+                print
+                print ("#"*40)
+                os.system(cmd11)
+                print
+                print
+                print
+                print
+                print command3
+                print ("#"*40)   
+
+        elif hostname == "4":
+            print allfirewall[4]
+            hostname4 =  str(allfirewall[4])
+            command4 = raw_input("Enter your command: ")
+            if command4 == 'q' or hostname == 'no':
+                print "SAYONARA!!!!"
+                time.sleep(1)
+                match = False
+             
+            elif "|" in command4:
+                piperemoval = command4.split("|",1)
+                firsthalf = piperemoval[0]
+                firstfreplace = firsthalf.replace(' ','+')
+
+                secondhalf = piperemoval[1]
+                #secondhalfsplit = secondhalf.split()
+                #secondhalfsplitinclud = secondhalfsplit[0]
+                #secondhalfsplitstring = secondhalfsplit[1] 
+                #secondreplace = secondhalfsplitinclud.replace('i','grep')
+
+                cmdreplace = command4.replace(' ','+')
+
+                cmd1111 = "curl -s -k -u " + usernameee +":" + codigo + " -A ASDM https://" + hostname4 + "/admin/exec/"
+                cmd11111 = cmd1111 + firstfreplace + " | " + secondhalf
+                print command4
+                print ("#"*40)
+                os.system(cmd11111)
+                print
+                print
+                print
+                print
+
+            else:
+                cmdreplace = command4.replace(' ','+')
+
+                cmd1 = "curl -k -u " + usernameee +":" + codigo + " -A ASDM https://" + hostname4 + "/admin/exec/"
+                cmd11 = cmd1 + cmdreplace
+                print
+                print ("#"*40)
+                os.system(cmd11)
+                print
+                print
+                print
+                print
+                print command4
+                print ("#"*40)   
+
+        elif hostname == "5":
+            print allfirewall[5]
+            hostname5 =  str(allfirewall[5])
+            command5 = raw_input("Enter your command: ")
+            if command5 == 'q' or hostname == 'no':
+                print "SAYONARA!!!!"
+                time.sleep(1)
+                match = False
+             
+            elif "|" in command5:
+                piperemoval = command5.split("|",1)
+                firsthalf = piperemoval[0]
+                firstfreplace = firsthalf.replace(' ','+')
+
+                secondhalf = piperemoval[1]
+                #secondhalfsplit = secondhalf.split()
+                #secondhalfsplitinclud = secondhalfsplit[0]
+                #secondhalfsplitstring = secondhalfsplit[1] 
+                #secondreplace = secondhalfsplitinclud.replace('i','grep')
+
+                cmdreplace = command5.replace(' ','+')
+
+                cmd1111 = "curl -s -k -u " + usernameee +":" + codigo + " -A ASDM https://" + hostname5 + "/admin/exec/"
+                cmd11111 = cmd1111 + firstfreplace + " | " + secondhalf
+                print command5
+                print ("#"*40)
+                os.system(cmd11111)
+                print
+                print
+                print
+                print
+
+            else:
+                cmdreplace = command5.replace(' ','+')
+
+                cmd1 = "curl -k -u " + usernameee +":" + codigo + " -A ASDM https://" + hostname5 + "/admin/exec/"
+                cmd11 = cmd1 + cmdreplace
+                print
+                print ("#"*40)
+                os.system(cmd11)
+                print
+                print
+                print
+                print
+                print command5
+                print ("#"*40)   
+
+        elif hostname == "6":
+            hostname6 = str(allfirewall[6])
+            print hostname6
+
+            command6 = raw_input("Enter your command: ")
+            if command6 == 'q' or hostname == 'no':
+                print "SAYONARA!!!!"
+                time.sleep(1)
+                match = False
+             
+            elif "|" in command6:
+                piperemoval = command6.split("|",1)
+                firsthalf = piperemoval[0]
+                firstfreplace = firsthalf.replace(' ','+')
+
+                secondhalf = piperemoval[1]
+                #secondhalfsplit = secondhalf.split()
+                #secondhalfsplitinclud = secondhalfsplit[0]
+                #secondhalfsplitstring = secondhalfsplit[1] 
+                #secondreplace = secondhalfsplitinclud.replace('i','grep')
+
+                cmdreplace = command6.replace(' ','+')
+
+                cmd1111 = "curl -s -k -u " + usernameee +":" + codigo + " -A ASDM https://" + hostname6 + "/admin/exec/"
+                cmd11111 = cmd1111 + firstfreplace + " | " + secondhalf
+                print command6
+                print ("#"*40)
+                os.system(cmd11111)
+                print
+                print
+                print
+                print
+
+            else:
+                cmdreplace = command6.replace(' ','+')
+
+                cmd1 = "curl -k -u " + usernameee +":" + codigo + " -A ASDM https://" + hostname6 + "/admin/exec/"
+                cmd11 = cmd1 + cmdreplace
+                print
+                print ("#"*40)
+                os.system(cmd11)
+                print
+                print
+                print
+                print
+                print command6
+                print ("#"*40)   
+
+
+        elif hostname == "7":
+            print allfirewall[7]
+            hostname7 =  str(allfirewall[7])
+
+            command7 = raw_input("Enter your command: ")
+            if command7 == 'q' or hostname == 'no':
+                print "SAYONARA!!!!"
+                time.sleep(1)
+                match = False
+             
+            elif "|" in command7:
+                piperemoval = command7.split("|",1)
+                firsthalf = piperemoval[0]
+                firstfreplace = firsthalf.replace(' ','+')
+
+                secondhalf = piperemoval[1]
+                #secondhalfsplit = secondhalf.split()
+                #secondhalfsplitinclud = secondhalfsplit[0]
+                #secondhalfsplitstring = secondhalfsplit[1] 
+                #secondreplace = secondhalfsplitinclud.replace('i','grep')
+
+                cmdreplace = command7.replace(' ','+')
+
+                cmd1111 = "curl -s -k -u " + usernameee +":" + codigo + " -A ASDM https://" + hostname7 + "/admin/exec/"
+                cmd11111 = cmd1111 + firstfreplace + " | " + secondhalf
+                print command7
+                print ("#"*40)
+                os.system(cmd11111)
+                print
+                print
+                print
+                print
+
+            else:
+                cmdreplace = command7.replace(' ','+')
+
+                cmd1 = "curl -k -u " + usernameee +":" + codigo + " -A ASDM https://" + hostname7 + "/admin/exec/"
+                cmd11 = cmd1 + cmdreplace
+                print
+                print ("#"*40)
+                os.system(cmd11)
+                print
+                print
+                print
+                print
+                print command7
+                print ("#"*40)   
+
+        elif hostname == "8":
+            print allfirewall[8]
+            hostname8 =  str(allfirewall[8])
+            command8 = raw_input("Enter your command: ")
+            if command8 == 'q' or hostname == 'no':
+                print "SAYONARA!!!!"
+                time.sleep(1)
+                match = False
+             
+            elif "|" in command8:
+                piperemoval = command8.split("|",1)
+                firsthalf = piperemoval[0]
+                firstfreplace = firsthalf.replace(' ','+')
+
+                secondhalf = piperemoval[1]
+                #secondhalfsplit = secondhalf.split()
+                #secondhalfsplitinclud = secondhalfsplit[0]
+                #secondhalfsplitstring = secondhalfsplit[1] 
+                #secondreplace = secondhalfsplitinclud.replace('i','grep')
+
+                cmdreplace = command8.replace(' ','+')
+
+                cmd1111 = "curl -s -k -u " + usernameee +":" + codigo + " -A ASDM https://" + hostname8 + "/admin/exec/"
+                cmd11111 = cmd1111 + firstfreplace + " | " + secondhalf
+                print command8
+                print ("#"*40)
+                os.system(cmd11111)
+                print
+                print
+                print
+                print
+
+            else:
+                cmdreplace = command8.replace(' ','+')
+
+                cmd1 = "curl -k -u " + usernameee +":" + codigo + " -A ASDM https://" + hostname8 + "/admin/exec/"
+                cmd11 = cmd1 + cmdreplace
+                print
+                print ("#"*40)
+                os.system(cmd11)
+                print
+                print
+                print
+                print
+                print command8
+                print ("#"*40)   
+
+        elif hostname == "9":
+            print allfirewall[9]
+            hostname9 =  str(allfirewall[9])
+            command9 = raw_input("Enter your command: ")
+            if command9 == 'q' or hostname == 'no':
+                print "SAYONARA!!!!"
+                time.sleep(1)
+                match = False
+             
+            elif "|" in command9:
+                piperemoval = command9.split("|",1)
+                firsthalf = piperemoval[0]
+                firstfreplace = firsthalf.replace(' ','+')
+
+                secondhalf = piperemoval[1]
+                #secondhalfsplit = secondhalf.split()
+                #secondhalfsplitinclud = secondhalfsplit[0]
+                #secondhalfsplitstring = secondhalfsplit[1] 
+                #secondreplace = secondhalfsplitinclud.replace('i','grep')
+
+                cmdreplace = command9.replace(' ','+')
+
+                cmd1111 = "curl -s -k -u " + usernameee +":" + codigo + " -A ASDM https://" + hostname9 + "/admin/exec/"
+                cmd11111 = cmd1111 + firstfreplace + " | " + secondhalf
+                print command9
+                print ("#"*40)
+                os.system(cmd11111)
+                print
+                print
+                print
+                print
+
+            else:
+                cmdreplace = command9.replace(' ','+')
+
+                cmd1 = "curl -k -u " + usernameee +":" + codigo + " -A ASDM https://" + hostname9 + "/admin/exec/"
+                cmd11 = cmd1 + cmdreplace
+                print
+                print ("#"*40)
+                os.system(cmd11)
+                print
+                print
+                print
+                print
+                print command9
+                print ("#"*40)   
+
+        else: 
+            print ("Come on!!! again: ")
+            print
+            print
+
+        print "*************************************"
+        print
