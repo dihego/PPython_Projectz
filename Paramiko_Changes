@@ -56,7 +56,7 @@ class devicesF:
 			#	listastring = str(z)
 			#	remote_conn = ssh.invoke_shell()
 			#	remote_conn.send('en\n')
-			#	remote_conn.send('BlackDogGo!')
+			#	remote_conn.send('enablepassword!')
 			#	remote_conn.send('\n')
 			#	remote_conn.send('terminal pager 0\n')
 			#	remote_conn.send('show running\n')
@@ -109,7 +109,7 @@ class devicesF:
 				remote_conn = ssh.invoke_shell()
 				#remote_conn.send('en\n')
 				#remote_conn.send('config term\n')
-				#remote_conn.send('no snmp-server community BringUS5omeD33rJerky!LB RO 10 \n')
+				#remote_conn.send('no snmp-server community snmpspassword!LB RO 10 \n')
 
 				#remote_conn.send('2 permit 172.31.25.16\n')
 				#remote_conn.send('end\n')
@@ -130,7 +130,7 @@ class devicesF:
 
 				#remote_conn.send('no snmp-server \n')
 
-				#remote_conn.send('no snmp-server community BringUS5omeD33rJerky!HN view SolarWindsView RO \n')
+				#remote_conn.send('no snmp-server community enablepassword view SolarWindsView RO \n')
 
 				#remote_conn.send('snmp-server contact IT_Network_ITNetworkTeam@nwfcu.org\n')
 				#remote_conn.send('snmp-server location NWFCU\n')
@@ -141,7 +141,7 @@ class devicesF:
 				#remote_conn.send('snmp-server view SolarWindsView mib-2 included\n')
 				#remote_conn.send('snmp-server view SolarWindsView chassis included\n')
 				#remote_conn.send('snmp-server group snmpv3grp v3 priv read SolarWindsView write SolarWindsView\n')
-				#remote_conn.send('snmp-server user snmpv3usr snmpv3grp v3 auth md5 BringUS5omeD33rJerky!HN priv des56 BringUS5omeD33rJerky!HN\n')
+				#remote_conn.send('snmp-server user snmpv3usr snmpv3grp v3 auth md5 enablepassword priv des56 snmppassword\n')
 
 				#remote_conn.send('end\n')
 
@@ -269,3 +269,4 @@ while exit:
 		print "***************** CTRL ^C to Quit!!! *****************"
 		print "******************************************************"
 
+e
