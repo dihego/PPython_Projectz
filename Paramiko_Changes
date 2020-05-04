@@ -1,0 +1,271 @@
+#!/usr/local/bin/python2.7 
+import paramiko, sys
+import os
+import re
+import time
+from datetime import datetime
+import getpass
+
+#os.system('rm logfile')
+#os.system('rm output')
+
+#logfiles = 'logfile'
+#logfiless = 'output'
+
+i = datetime.now()
+e = i.strftime('%H:%M:%S %Y/%m/%d')
+d = i.strftime('%Y_%m_%d')
+os.system('cls')
+
+print "*******************************************************************"
+print "* Making Queries & Changes per device -                           *"
+print "*  NWFCU - Authorized users only                            *"
+print "*                         	   				  *"
+print "* "	+ e + 		                     "  						  *"
+print "*******************************************************************" 
+print
+print
+print "Enter your credentials!"
+usernamee = raw_input("Username: ")
+Passwordz = getpass.getpass("Password: ")
+print 
+
+
+ssh = paramiko.SSHClient()
+#paramiko.util.log_to_file("/NAS_ddos_tools/VNSS_Nocc/.logs/allVerbose")
+
+
+class devicesF:
+	##filename=open('logfiless','a')
+
+	
+	def Enable(self,host_ips,cmdz,timez):
+		print "Enable"
+		#archivo_por_nombre = host_ips
+		#filename=open(archivo_por_nombre,'w')
+		try:
+			print host_ips
+			#ssh = paramiko.SSHClient()
+			#ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+			#ssh.connect(host_ips, username=usernamee,password=Passwordz)
+			print
+
+
+
+			#for z in cmdz:
+			#	listastring = str(z)
+			#	remote_conn = ssh.invoke_shell()
+			#	remote_conn.send('en\n')
+			#	remote_conn.send('BlackDogGo!')
+			#	remote_conn.send('\n')
+			#	remote_conn.send('terminal pager 0\n')
+			#	remote_conn.send('show running\n')
+
+				#remote_conn.send(listastring)
+			#	remote_conn.send('\n')
+			#	time.sleep(5)
+			#	output = remote_conn.recv(5000)
+			#	print output
+			#	filename.write(output)
+			#	filename.write('\n')
+				#remote_conn.send('show interfa status | ex disabled\n')
+				#time.sleep(8)
+				#output = remote_conn.recv(5000)
+				#print (output)
+
+
+
+
+			#	ssh.close()
+
+
+			#time.sleep(2)
+			#filename.close()
+			print
+			print "********************************"
+			print "Hosts CHECKED!    ++ENABLE+++"
+			print "********************************"
+		except:
+			print "Enable for this device : ", host_ips
+			print "Incorrect commands or host not available...."
+
+
+
+	def Core(self,host_ips,cmdz,timez):
+		print "core"
+		#archivo_por_nombre = "/NAS_ddos_tools/VNSS_Nocc/.logs/" + usernamee + "_logC_" + d
+		#filename=open(host_ips,'w')
+		try:
+			print host_ips
+			ssh = paramiko.SSHClient()
+			ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+			ssh.connect(host_ips, username=usernamee,password=Passwordz)
+			print
+
+
+
+			for z in cmdz:
+				listastring = str(z)
+				remote_conn = ssh.invoke_shell()
+				#remote_conn.send('en\n')
+				#remote_conn.send('config term\n')
+				#remote_conn.send('no snmp-server community BringUS5omeD33rJerky!LB RO 10 \n')
+
+				#remote_conn.send('2 permit 172.31.25.16\n')
+				#remote_conn.send('end\n')
+				remote_conn.send('copy running flash: \n')
+				remote_conn.send(' \n')
+				#remote_conn.send(' \n')
+				#remote_conn.send(' \n')
+				#remote_conn.send('2 permit 172.31.25.151\n')
+				#remote_conn.send('ip access-list rese 20 10 10 \n')
+
+
+				#remote_conn.send('logging host 10.100.0.77\n')
+				#remote_conn.send('logging source vlan 99\n')
+				#remote_conn.send('logging console informational\n')
+
+				#remote_conn.send('clear logging\n')
+				#remote_conn.send('\n')
+
+				#remote_conn.send('no snmp-server \n')
+
+				#remote_conn.send('no snmp-server community BringUS5omeD33rJerky!HN view SolarWindsView RO \n')
+
+				#remote_conn.send('snmp-server contact IT_Network_ITNetworkTeam@nwfcu.org\n')
+				#remote_conn.send('snmp-server location NWFCU\n')
+				#remote_conn.send('snmp-server view SolarWindsView interfaces included\n')
+				#remote_conn.send('snmp-server view SolarWindsView internet included\n')
+				#remote_conn.send('snmp-server view SolarWindsView iso included\n')
+				#remote_conn.send('snmp-server view SolarWindsView system included\n')
+				#remote_conn.send('snmp-server view SolarWindsView mib-2 included\n')
+				#remote_conn.send('snmp-server view SolarWindsView chassis included\n')
+				#remote_conn.send('snmp-server group snmpv3grp v3 priv read SolarWindsView write SolarWindsView\n')
+				#remote_conn.send('snmp-server user snmpv3usr snmpv3grp v3 auth md5 BringUS5omeD33rJerky!HN priv des56 BringUS5omeD33rJerky!HN\n')
+
+				#remote_conn.send('end\n')
+
+				#remote_conn.send(listastring)
+				#remote_conn.send('wr mem\n')
+				time.sleep(5)
+				output = remote_conn.recv(5000)
+				print output
+				#remote_conn.send('show interfa status | ex disabled\n')
+				#time.sleep(8)
+				#output = remote_conn.recv(5000)
+				#print (output)
+
+
+
+				ssh.close()
+
+			time.sleep(2)
+			#filename.close()
+			print
+			print "********************************"
+			print "Hosts CHECKED!   +++REGULAR++++"
+			print "********************************"
+		except:
+			print
+			print "IP for this device : ", host_ips
+			print "Incorrect commands or host not available...."
+
+
+c_schwab = devicesF()
+
+
+devices = ['* Juniper/CISCO/F5/Linux Boxes ','REGULAR___QUIT']
+exit = True
+while exit:
+
+	print "Copy and Paste name of hosts you would like to query: "                                                                                           
+	print "CTR^D to quit and query hosts ********** "                                                                                                        
+	listaJ = list()
+	listafinal = list()
+	listaJN = len(listafinal)
+	hostsinput = sys.stdin.read().split()                                                                                                                     
+	listaJ.append(hostsinput)
+
+
+	print
+	print
+	for z in listaJ:
+		print "*********************************"
+		for q in z:
+			listafinal.append(q)
+		#stringg = str(z)
+		#listafinal.append(stringg)
+	if re.search(r'(172.30.99.24|172.30.99.22|172.30.99.241|172.30.99.22|172.30.99.11)',str(listafinal)):
+		lista_commands = list()
+		while True:
+			maxlines1 = raw_input("Number of commands YOU WOULD LIKE TO QUERY : ")
+			if re.search(r'(\w+[a-z]|\w+[A-Z])',maxlines1):
+				print "Is not a number!"
+			elif len(maxlines1.strip()) == 0 :
+				print "No input"
+			elif maxlines1 in ['exit',"^D",',','<','@','!','~','#','$','%','^','&','*','-','_','=','+','?','>',',','.','/','`',':',';',"'"]:
+				print "Try Again"
+			else:
+				break
+		maxlines2 = int(maxlines1)
+		for lines in range(maxlines2):
+			inline = raw_input("")
+			lista_commands.append(inline)
+		print "*****************"
+		print "*****************"
+		cc=0
+		while cc < len(listafinal):
+			stringhosts = str(listafinal[cc])
+			c_schwab.Enable(stringhosts,lista_commands,e)
+			cc+=1
+			print
+		for zika in  listafinal:
+			print zika
+		print
+
+		for repeticion in lista_commands:
+			print repeticion
+		print
+		print
+		#print "*****************"
+		print "***************** CTRL ^C to Quit!!! *****************"
+		print "******************************************************"
+
+	else:
+
+		lista_commands = list()
+		while True:
+			maxlines1 = raw_input("Number of commands YOU WOULD LIKE TO QUERY : ")
+			if re.search(r'(\w+[a-z]|\w+[A-Z])',maxlines1):
+				print "Is not a number!"
+			elif len(maxlines1.strip()) == 0 :
+				print "No input"
+			elif maxlines1 in ['exit',"^D",',','<','@','!','~','#','$','%','^','&','*','-','_','=','+','?','>',',','.','/','`',':',';',"'"]:
+				print "Try Again"
+			else:
+				break
+
+		maxlines2 = int(maxlines1)
+		for lines in range(maxlines2):
+			inline = raw_input("")
+			lista_commands.append(inline)
+		print "*****************"
+		print "*****************"
+		cc=0
+		while cc < len(listafinal):
+			stringhosts = str(listafinal[cc])
+			c_schwab.Core(stringhosts,lista_commands,e)
+			cc+=1
+			print
+		for zika in  listafinal:
+			print zika
+		print
+
+		for repeticion in lista_commands:
+			print repeticion
+		print
+		print
+		#print "*****************"
+		print "***************** CTRL ^C to Quit!!! *****************"
+		print "******************************************************"
+
