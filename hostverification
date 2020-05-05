@@ -1,0 +1,51 @@
+#!/usr/bin/python
+import os,sys,re
+import subprocess
+import time
+
+datacenter2 = ['datacenter2extswa','datacenter2extswb','datacenter2inetrtr','datacenter2mplsswa','datacenter2mplsswb','datacenter2dmzswa','datacenter2dmzswb','datacenter2mgmtfw','datacenter2mgmtsw']
+datacenter1 = ['datacenter1mgmtfw','datacenter1mgmtsw','datacenter1dmzswa','datacenter1extswa','datacenter1extswb','datacenter1dmzswb']
+def dn3queries(hosts):
+        try:
+                pingss = subprocess.check_output("ping -c4 " + hosts,shell=True)
+                print pingss
+        except:
+                print "Unable to pint host"
+                print hosts
+                hostTofile = open("unreachable","w")
+                hostTofile.write(hosts)
+                hostTofile.write("\n")
+                hostTofile.write("Unable to reach host\n")
+                hostTofile.close()
+                result1 = subprocess.check_output("cat unreachable | mail email@address.com",shell=True)
+
+
+def dc7queries(hosts):
+        try:
+                pingss = subprocess.check_output("ping -c4 " + hosts,shell=True)
+                print pingss
+        except:
+                print "Unable to pint host"
+                print hosts
+                hostTofile = open("unreachable","w")
+                hostTofile.write(hosts)
+                hostTofile.write("\n")
+                hostTofile.write("Unable to reach host\n")
+                hostTofile.close()
+                result1 = subprocess.check_output("cat unreachable | mail email@address.com",shell=True)
+
+cc=0
+while cc < len(dn3):
+        stringhosts1 = str(dn3[cc])
+        dn3queries(stringhosts1)
+        cc+=1
+
+
+
+dd=0
+while dd < len(dc7):
+        stringhosts2 = str(dc7[dd])
+        dc7queries(stringhosts2)
+        dd+=1
+#results1 = re.findall(r'\s\d+\.\d(\%)',pingss)
+#print results1
